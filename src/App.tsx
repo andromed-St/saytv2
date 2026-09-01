@@ -62,7 +62,7 @@ export default function App() {
         type="button"
         onClick={() => scrollToId("verh")}
         aria-label="Наверх"
-        className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-[12px] border border-line bg-panel text-accent shadow-[0_12px_30px_-10px_rgba(0,0,0,0.8)] transition-all duration-300 hover:border-accent hover:text-limehi ${
+        className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-[12px] border border-line bg-panel text-accent shadow-[0_12px_30px_-14px_rgba(15,23,42,0.45)] transition-all duration-300 hover:border-accent hover:text-limedeep ${
           showTop ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
         }`}
       >

@@ -34,7 +34,7 @@ const TRUST: { icon: IconName; label: string }[] = [
 
 function Receipt() {
   return (
-    <div className="relative mx-auto w-full max-w-[360px]">
+    <div className="inset-dark relative mx-auto w-full max-w-[360px] rounded-[14px]">
       {/* свечение и фоновые слои */}
       <div className="absolute -inset-10 -z-10 rounded-full bg-accent/10 blur-3xl" />
       <div className="absolute inset-0 rotate-6 rounded-[14px] border border-viola/25 bg-surface/60" aria-hidden="true" />

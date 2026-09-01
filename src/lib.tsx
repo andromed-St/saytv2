@@ -66,7 +66,7 @@ export function SectionHead({
   return (
     <Reveal className="mb-10 max-w-3xl md:mb-14">
       <div className="eyebrow">
-        <span className="text-line">{"//"}</span> {num} · {eyebrow}
+        <span className="text-muted/60">{"//"}</span> {num} · {eyebrow}
       </div>
       <h2 className="mt-3 text-[28px] font-bold leading-tight tracking-tight md:text-[34px]">
         {title}

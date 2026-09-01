@@ -56,7 +56,7 @@ export function Timeline() {
         </div>
 
         <Reveal delay={200}>
-          <div className="num mt-12 inline-flex items-center gap-2.5 rounded-[10px] border border-lime/30 bg-lime/8 px-4 py-2.5 text-[13px] font-medium text-lime">
+          <div className="num mt-12 inline-flex items-center gap-2.5 rounded-[10px] border border-lime/50 bg-lime/12 px-4 py-2.5 text-[13px] font-medium text-limedeep">
             <Icon name="zap" className="h-4 w-4" />
             Средний фактический запуск — 7 дней. Сложные сети — 2–3 недели по графику.
           </div>
@@ -165,7 +165,7 @@ export function Calculator({ bizType, setBizType, onSend }: CalcProps) {
                     <span className="num text-[11px] font-bold uppercase tracking-[0.16em] text-accent">02</span>
                     <span className="text-[14px] font-semibold">Количество точек</span>
                   </div>
-                  <span className="num rounded-[8px] border border-lime/35 bg-lime/10 px-3 py-1 text-[16px] font-bold text-lime">
+                  <span className="num rounded-[8px] border border-lime/50 bg-lime/12 px-3 py-1 text-[16px] font-bold text-limedeep">
                     {points}
                   </span>
                 </div>
@@ -181,7 +181,7 @@ export function Calculator({ bizType, setBizType, onSend }: CalcProps) {
                 />
                 <div className="num mt-2 flex justify-between text-[11px] text-muted">
                   <span>1 точка</span>
-                  <span className="text-lime">{disc > 0 ? `скидка за сеть −${Math.round(disc * 100)}%` : "5 точек — скидка 12%"}</span>
+                  <span className="font-medium text-limedeep">{disc > 0 ? `скидка за сеть −${Math.round(disc * 100)}%` : "5 точек — скидка 12%"}</span>
                   <span>{MAX_POINTS} точек</span>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export function Calculator({ bizType, setBizType, onSend }: CalcProps) {
                         </span>
                         <Icon name={e.icon} className={`h-5 w-5 shrink-0 ${on ? "text-accent" : "text-muted"}`} />
                         <span className={`flex-1 text-[14px] font-medium ${on ? "text-snow" : "text-muted"}`}>{e.label}</span>
-                        <span className="num text-[13px] font-semibold text-lime">+{fmt(e.price)} BYN</span>
+                        <span className="num text-[13px] font-semibold text-limedeep">+{fmt(e.price)} BYN</span>
                       </label>
                     );
                   })}
@@ -235,7 +235,7 @@ export function Calculator({ bizType, setBizType, onSend }: CalcProps) {
                   </span>
                   <span className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${launch ? "bg-lime" : "bg-line"}`}>
                     <span
-                      className={`absolute top-0.5 h-5 w-5 rounded-full bg-ink transition-all duration-300 ${
+                      className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-[0_2px_6px_rgba(15,23,42,0.35)] transition-all duration-300 ${
                         launch ? "left-[22px]" : "left-0.5"
                       }`}
                     />
@@ -245,7 +245,7 @@ export function Calculator({ bizType, setBizType, onSend }: CalcProps) {
             </div>
 
             {/* ------- правая колонка: итог ------- */}
-            <div className="border-t border-line bg-[#0b0f14] p-6 font-mono md:p-8 lg:border-l lg:border-t-0">
+            <div className="inset-dark border-t border-line p-6 font-mono md:p-8 lg:border-l lg:border-t-0">
               <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-muted">
                 <span>Предварительный расчёт</span>
                 <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-ok" />

@@ -44,7 +44,7 @@ const WHY: WhyCard[] = [
 
 const TONES: Record<WhyCard["tone"], { box: string; chip: string }> = {
   accent: { box: "border-accent/35 bg-accent/10 text-accent", chip: "border-accent/30 bg-accent/8 text-accent" },
-  lime: { box: "border-lime/35 bg-lime/10 text-lime", chip: "border-lime/30 bg-lime/8 text-lime" },
+  lime: { box: "border-lime/45 bg-lime/12 text-limedeep", chip: "border-lime/40 bg-lime/10 text-limedeep" },
   viola: { box: "border-viola/40 bg-viola/10 text-viola", chip: "border-viola/35 bg-viola/8 text-viola" },
   ok: { box: "border-ok/35 bg-ok/10 text-ok", chip: "border-ok/30 bg-ok/8 text-ok" },
 };
@@ -155,7 +155,7 @@ export function Compare() {
                       </td>
                       <td className="border-x border-accent/25 bg-accent/[0.06] px-6 py-4">
                         <span className="flex items-start gap-2.5">
-                          <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-lime" />
+                          <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-limedeep" />
                           <span className="text-[14px] font-medium leading-snug text-snow">{r.local}</span>
                         </span>
                       </td>

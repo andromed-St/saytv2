@@ -57,7 +57,7 @@ export function Niches({ onPick }: { onPick: (id: BizId) => void }) {
                 <button
                   type="button"
                   onClick={() => onPick(n.id)}
-                  className="mt-5 inline-flex items-center gap-2 self-start text-[13.5px] font-semibold text-accent transition-all hover:gap-3 hover:text-limehi"
+                  className="mt-5 inline-flex items-center gap-2 self-start text-[13.5px] font-semibold text-accent transition-all hover:gap-3 hover:text-limedeep"
                 >
                   Рассчитать для «{n.title.toLowerCase()}»
                   <Icon name="arrow" className="h-4 w-4" />
@@ -114,14 +114,14 @@ export function Products({ onCalc }: { onCalc: () => void }) {
                   ))}
                 </ul>
                 <div className="mt-4 flex items-baseline gap-2 border-t border-line/70 pt-4">
-                  <span className="num text-[19px] font-bold text-lime">от {fmt(p.price)} BYN</span>
+                  <span className="num text-[19px] font-bold text-limedeep">от {fmt(p.price)} BYN</span>
                   {p.oldPrice && <span className="num text-[13px] text-muted line-through">{fmt(p.oldPrice)}</span>}
                 </div>
                 <div className="num mt-1 text-[10.5px] tracking-[0.12em] text-muted/70">SKU: {p.sku}</div>
                 <button
                   type="button"
                   onClick={onCalc}
-                  className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-accent transition-all hover:gap-2.5 hover:text-limehi"
+                  className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-accent transition-all hover:gap-2.5 hover:text-limedeep"
                 >
                   Добавить в расчёт
                   <Icon name="arrow" className="h-3.5 w-3.5" />
@@ -159,7 +159,7 @@ export function Equipment({ onNote }: { onNote: (text: string) => void }) {
                 <Icon name={c.icon} className="h-7 w-7 text-accent transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="mt-3.5 flex-1 text-[14.5px] font-bold leading-snug">{c.title}</h3>
                 <div className="num mt-4 text-[12px] text-muted">
-                  {c.models} моделей · от <span className="font-bold text-lime">{fmt(c.from)} BYN</span>
+                  {c.models} моделей · от <span className="font-bold text-limedeep">{fmt(c.from)} BYN</span>
                 </div>
               </article>
             </Reveal>

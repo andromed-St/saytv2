@@ -67,7 +67,7 @@ export default function Header() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "border-b border-line bg-[rgba(13,17,23,0.92)] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.7)] backdrop-blur-md"
+            ? "border-b border-line bg-[rgba(255,255,255,0.9)] shadow-[0_10px_30px_-18px_rgba(15,23,42,0.25)] backdrop-blur-md"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -159,7 +159,7 @@ export default function Header() {
 
       {/* Мобильное меню */}
       <div
-        className={`fixed inset-x-0 bottom-0 top-[72px] z-40 overflow-y-auto bg-[rgba(13,17,23,0.98)] backdrop-blur-lg transition-all duration-300 lg:hidden ${
+        className={`fixed inset-x-0 bottom-0 top-[72px] z-40 overflow-y-auto bg-[rgba(255,255,255,0.98)] backdrop-blur-lg transition-all duration-300 lg:hidden ${
           open ? "visible opacity-100" : "invisible opacity-0"
         }`}
       >

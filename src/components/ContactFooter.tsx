@@ -20,7 +20,7 @@ function MessengerRow({ compact = false }: { compact?: boolean }) {
           href={m.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`flex items-center gap-2.5 rounded-[12px] border border-line bg-panel px-4 py-2.5 text-[14px] font-semibold text-muted transition-all duration-200 hover:-translate-y-0.5 ${m.color}`}
+          className={`flex items-center gap-2.5 rounded-[12px] border border-line bg-ink px-4 py-2.5 text-[14px] font-semibold text-muted shadow-[0_1px_2px_rgba(15,23,42,0.05)] transition-all duration-200 hover:-translate-y-0.5 ${m.color}`}
         >
           <Icon name={m.icon} className="h-[18px] w-[18px]" />
           {m.name}
@@ -67,7 +67,7 @@ export function ContactCta({ calcNote }: { calcNote: string }) {
             <div className="pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-accent/10 blur-3xl" aria-hidden="true" />
             <Reveal>
               <div className="eyebrow">
-                <span className="text-line">//</span> 11 · Контакты
+                <span className="text-muted/60">//</span> 11 · Контакты
               </div>
               <h2 className="mt-3 text-[28px] font-bold leading-tight tracking-tight md:text-[34px]">
                 Обсудим ваш проект <span className="text-accent">на этой неделе?</span>
@@ -279,7 +279,7 @@ function PolicyModal({ onClose }: { onClose: () => void }) {
           </p>
           <p>
             Вы можете запросить удаление своих данных в любой момент, написав на{" "}
-            <a href={`mailto:${CONTACTS.email}`} className="font-medium text-accent hover:text-limehi">
+            <a href={`mailto:${CONTACTS.email}`} className="font-medium text-accent hover:text-limedeep">
               {CONTACTS.email}
             </a>
             .
@@ -299,7 +299,7 @@ export function Footer() {
   const [policyOpen, setPolicyOpen] = useState(false);
 
   return (
-    <footer className="relative z-10 border-t border-line bg-[#0b0e13]">
+    <footer className="relative z-10 border-t border-line bg-panel">
       <div className="mx-auto w-full max-w-[1200px] px-5 py-14 md:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.1fr]">
           <div>
@@ -370,7 +370,7 @@ export function Footer() {
                   href={CONTACTS.kb}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-accent transition-colors hover:text-limehi"
+                  className="flex items-center gap-2.5 font-medium text-accent transition-colors hover:text-limedeep"
                 >
                   <Icon name="doc" className="h-4 w-4" />
                   База знаний и инструкции
