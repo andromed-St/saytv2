@@ -1,4 +1,5 @@
 import { Barcode, Icon, type IconName } from "./Icons";
+import ParticleField from "./Particles";
 import { TICKER_ITEMS } from "../data";
 import { Reveal, scrollToId } from "../lib";
 
@@ -119,7 +120,8 @@ function Ticker() {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-auto grid w-full max-w-[1200px] items-center gap-14 px-5 pb-16 pt-12 md:px-8 md:pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:pb-20">
+      <ParticleField className="z-0" />
+      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] items-center gap-14 px-5 pb-16 pt-12 md:px-8 md:pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:pb-20">
         <div>
           <Reveal>
             <div className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel px-4 py-2">

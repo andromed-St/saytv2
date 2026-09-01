@@ -91,7 +91,7 @@ export function Products({ onCalc }: { onCalc: () => void }) {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((p, i) => (
             <Reveal key={p.id} delay={(i % 4) * 80}>
-              <article className="card-mi group flex h-full flex-col p-5">
+              <article className={`card-mi group flex h-full flex-col p-5 ${i % 2 ? "card-squish-alt" : "card-squish"}`}>
                 <div className="flex min-h-[22px] flex-wrap gap-1.5">
                   {p.badges.map((b) => (
                     <span key={b} className={`badge ${BADGE_CLASS[b]}`}>
@@ -100,7 +100,7 @@ export function Products({ onCalc }: { onCalc: () => void }) {
                   ))}
                 </div>
                 <div className="mt-3 flex items-center gap-2 text-accent">
-                  <Icon name={p.icon} className="h-5 w-5" />
+                  <Icon name={p.icon} className="prod-ico h-5 w-5" />
                   <span className="num text-[11px] font-medium uppercase tracking-[0.14em] text-muted">{p.cat}</span>
                 </div>
                 <h3 className="mt-2.5 text-[16px] font-bold leading-snug">{p.name}</h3>
