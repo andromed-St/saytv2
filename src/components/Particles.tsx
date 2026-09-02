@@ -25,7 +25,7 @@ const COLORS: [number, number, number][] = [
  * Лёгкое поле частиц для первого экрана.
  * — число частиц зависит от площади (24–55);
  * — пауза, когда hero вне вьюпорта или вкладка свёрнута;
- * — при prefers-reduced-motion рисуется один статичный кадр.
+ * — при prefers-reduced-motion — «спокойный» режим: медленный дрейф без мерцания.
  */
 export default function ParticleField({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -38,6 +38,7 @@ export default function ParticleField({ className = "" }: { className?: string }
     if (!ctx) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const speed = reduced ? 0.3 : 1; // спокойный режим — медленный дрейф
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     let parts: Particle[] = [];
@@ -78,7 +79,7 @@ export default function ParticleField({ className = "" }: { className?: string }
     const draw = (t: number) => {
       ctx.clearRect(0, 0, W, H);
       for (const p of parts) {
-        const alpha = p.a * (0.55 + 0.45 * Math.sin(t * 0.001 * p.tw + p.ph));
+        const alpha = reduced ? p.a : p.a * (0.55 + 0.45 * Math.sin(t * 0.001 * p.tw + p.ph));
         ctx.fillStyle = `rgba(${p.c[0]},${p.c[1]},${p.c[2]},${alpha.toFixed(3)})`;
         ctx.strokeStyle = ctx.fillStyle;
         if (p.plus) {
@@ -101,8 +102,8 @@ export default function ParticleField({ className = "" }: { className?: string }
 
     const step = (t: number) => {
       for (const p of parts) {
-        p.x += p.vx;
-        p.y += p.vy;
+        p.x += p.vx * speed;
+        p.y += p.vy * speed;
         if (p.y < -12) {
           p.y = H + 10;
           p.x = rnd(0, W);
@@ -115,7 +116,7 @@ export default function ParticleField({ className = "" }: { className?: string }
     };
 
     const start = () => {
-      if (running || reduced) return;
+      if (running) return;
       running = true;
       raf = requestAnimationFrame(step);
     };
@@ -127,7 +128,7 @@ export default function ParticleField({ className = "" }: { className?: string }
 
     init();
     draw(0);
-    if (!reduced) start();
+    start();
 
     const io = new IntersectionObserver(
       (entries) => {

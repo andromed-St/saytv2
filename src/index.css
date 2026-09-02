@@ -156,11 +156,24 @@ body {
   background-size: 260% 100%;
   background-repeat: repeat-x;
   background-position: 0% 50%;
-  animation: mi-flow 7s linear infinite;
+  animation: mi-flow 5.5s linear infinite;
   color: #0d1117;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.6) inset,
     0 10px 22px -10px rgba(77, 124, 15, 0.45);
+}
+/* Периодическая «волна света», пробегающая по кнопке */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 34%, rgba(255, 255, 255, 0.85) 50%, transparent 66%);
+  background-size: 240% 100%;
+  background-repeat: no-repeat;
+  background-position: -12% 0;
+  animation: mi-wave 3.6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+  pointer-events: none;
 }
 .btn-primary::after {
   content: "";
@@ -196,6 +209,17 @@ body {
   }
   to {
     left: 135%;
+  }
+}
+@keyframes mi-wave {
+  0% {
+    background-position: -12% 0;
+  }
+  42% {
+    background-position: 105% 0;
+  }
+  100% {
+    background-position: 105% 0;
   }
 }
 .btn-secondary {
@@ -527,10 +551,15 @@ select.field {
     transition: none;
   }
   .card-mi:hover {
-    transform: none;
+    transform: translateY(-2px);
   }
+  /* фирменные анимации сохраняются в спокойной форме */
   .btn-primary {
+    animation: mi-flow 16s linear infinite;
+  }
+  .btn-primary::before {
     animation: none;
+    display: none;
   }
   .btn-primary::after {
     display: none;
@@ -543,7 +572,7 @@ select.field {
   .card-squish:focus-within,
   .card-squish-alt:hover,
   .card-squish-alt:focus-within {
-    transform: none;
+    transform: translateY(-4px);
   }
   .prod-ico {
     transition: none;

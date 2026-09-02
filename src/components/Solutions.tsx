@@ -38,10 +38,10 @@ export function Niches({ onPick }: { onPick: (id: BizId) => void }) {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {NICHES.map((n, i) => (
             <Reveal key={n.id} delay={(i % 3) * 90}>
-              <article className="card-mi group flex h-full flex-col p-6">
+              <article className={`card-mi group flex h-full flex-col p-6 ${i % 2 ? "card-squish-alt" : "card-squish"}`}>
                 <div className="flex items-center gap-3.5">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] border border-accent/35 bg-accent/10 text-accent transition-colors group-hover:bg-accent/15">
-                    <Icon name={n.icon} className="h-6 w-6" />
+                    <Icon name={n.icon} className="prod-ico h-6 w-6" />
                   </span>
                   <h3 className="text-[18px] font-bold">{n.title}</h3>
                 </div>
@@ -155,8 +155,8 @@ export function Equipment({ onNote }: { onNote: (text: string) => void }) {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {EQUIP_CATS.map((c, i) => (
             <Reveal key={c.id} delay={i * 70}>
-              <article className="card-mi group flex h-full flex-col p-5">
-                <Icon name={c.icon} className="h-7 w-7 text-accent transition-transform duration-300 group-hover:scale-110" />
+              <article className={`card-mi group flex h-full flex-col p-5 ${i % 2 ? "card-squish-alt" : "card-squish"}`}>
+                <Icon name={c.icon} className="prod-ico h-7 w-7 text-accent" />
                 <h3 className="mt-3.5 flex-1 text-[14.5px] font-bold leading-snug">{c.title}</h3>
                 <div className="num mt-4 text-[12px] text-muted">
                   {c.models} моделей · от <span className="font-bold text-limedeep">{fmt(c.from)} BYN</span>
@@ -183,8 +183,8 @@ export function Equipment({ onNote }: { onNote: (text: string) => void }) {
             {BUNDLES.map((b, i) => (
               <Reveal key={b.id} delay={i * 100}>
                 <article
-                  className={`card-mi relative flex h-full flex-col p-6 ${
-                    b.accent ? "border-accent/50 shadow-[0_0_0_1px_rgba(34,211,238,0.2),0_20px_50px_-25px_rgba(34,211,238,0.35)]" : ""
+                  className={`card-mi relative flex h-full flex-col p-6 ${i % 2 ? "card-squish-alt" : "card-squish"} ${
+                    b.accent ? "border-accent/50 shadow-[0_0_0_1px_rgba(14,116,144,0.18),0_20px_50px_-25px_rgba(14,116,144,0.4)]" : ""
                   }`}
                 >
                   {b.accent && (
